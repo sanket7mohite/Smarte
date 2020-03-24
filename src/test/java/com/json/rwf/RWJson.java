@@ -38,7 +38,6 @@ public class RWJson
             write2Csv(employees);
 
         }
-
         catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
