@@ -30,7 +30,10 @@ public class RWJson
 
             List<Employee> employees = new ArrayList<>();
 
-            employeeList.forEach( emp -> parseEmployeeObject( (JSONObject) emp, employees ) );
+            for (int i = 0; i < employeeList.size(); i++) {
+
+            	parseEmployeeObject( (JSONObject) employeeList.get(i), employees);
+            	}
 
             write2Csv(employees);
 
@@ -71,6 +74,8 @@ public class RWJson
         //Get  Gender
         String Gender = (String) jsonObject.get("Gender");
         employee.setGender(Gender);
+     
+//        System.out.println("result" +employee);
 
         //Get CTC_Annual_INR
         String CTC_Annual_INR = (String) jsonObject.get("CTC_Annual_INR");
